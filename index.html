@@ -1,1068 +1,346 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paws Haven Shelter - Find Your Furry Friend</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paws Haven Shelter | Find Your Furry Friend</title>
 
-        :root {
-            --primary: #ff6b6b;
-            --secondary: #4ecdc4;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-            --success: #28a745;
-        }
+  <!-- Fonts & Icons -->
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: #f9f9f9;
-        }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
 
-        h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-        }
+  <!-- Main CSS -->
 
-        /* Header & Navigation */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo i {
-            color: var(--secondary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .donate-btn {
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .donate-btn:hover {
-            background-color: #ff5252;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--dark);
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #ff5252;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background-color: white;
-            color: var(--dark);
-            transform: translateY(-3px);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Pets Grid */
-        .pets-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .pet-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .pet-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .pet-img {
-            height: 220px;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .pet-info {
-            padding: 20px;
-        }
-
-        .pet-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-        }
-
-        .pet-type {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .pet-details {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        .adopt-btn {
-            background-color: var(--primary);
-            color: white;
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .adopt-btn:hover {
-            background-color: #ff5252;
-        }
-
-        /* Filter Bar */
-        .filter-bar {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .filter-select {
-            padding: 10px 15px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            background-color: white;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        /* Forms */
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .form-row {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            flex: 1;
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1rem;
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Stats Section */
-        .stats {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a252f;
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h4 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #2c3e50;
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #2c3e50;
-            color: #bbb;
-            font-size: 0.9rem;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background-color: white;
-            border-radius: 15px;
-            width: 80%;
-            max-width: 500px;
-            padding: 40px;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--gray);
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-paw"></i>
-                    Paws Haven
-                </a>
-                
-                <div class="nav-links">
-                    <a href="#home" class="active">Home</a>
-                    <a href="#pets">Pets for Adoption</a>
-                    <a href="#volunteer">Volunteer</a>
-                    <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                
-                <button class="donate-btn" id="openDonateModal">Donate Now</button>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Find Your New Best Friend</h1>
-            <p>We rescue, rehabilitate, and rehome abandoned and neglected animals. Every pet deserves a loving home.</p>
-            <div class="hero-btns">
-                <a href="#pets" class="btn btn-primary">Meet Our Pets</a>
-                <a href="#volunteer" class="btn btn-secondary">Become a Volunteer</a>
-            </div>
-        </div>
-    </section>
+<!-- ================= HEADER ================= -->
 
-    <!-- Pets Section -->
-    <section id="pets">
-        <div class="container">
-            <div class="section-title">
-                <h2>Pets Waiting for a Home</h2>
-                <p>These lovely animals are looking for their forever families. Could you be the one?</p>
-            </div>
-            
-            <div class="filter-bar">
-                <select class="filter-select" id="typeFilter">
-                    <option value="all">All Pets</option>
-                    <option value="dog">Dogs</option>
-                    <option value="cat">Cats</option>
-                    <option value="other">Other</option>
-                </select>
-                
-                <select class="filter-select" id="ageFilter">
-                    <option value="all">All Ages</option>
-                    <option value="puppy">Puppy/Kitten</option>
-                    <option value="young">Young (1-3 years)</option>
-                    <option value="adult">Adult (4-7 years)</option>
-                    <option value="senior">Senior (8+ years)</option>
-                </select>
-                
-                <select class="filter-select" id="genderFilter">
-                    <option value="all">Any Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-            
-            <div class="pets-grid" id="petsContainer">
-                <!-- Pet cards will be dynamically generated here -->
-            </div>
-        </div>
-    </section>
+<header>
+  <div class="container">
+    <nav class="navbar">
+      <a href="#home" class="logo">
+        <i class="fas fa-paw"></i> Paws Haven
+      </a>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Impact</h2>
-                <p>Together, we're making a difference in the lives of animals</p>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>1,250+</h3>
-                    <p>Pets Rescued</p>
-                </div>
-                <div class="stat-item">
-                    <h3>980+</h3>
-                    <p>Successful Adoptions</p>
-                </div>
-                <div class="stat-item">
-                    <h3>200+</h3>
-                    <p>Active Volunteers</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Veterinary Care</p>
-                </div>
-            </div>
-        </div>
-    </section>
+```
+  <div class="nav-links" id="navLinks">
+    <a href="#home" class="active">Home</a>
+    <a href="#pets">Adopt</a>
+    <a href="#volunteer">Volunteer</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-    <!-- Volunteer Section -->
-    <section id="volunteer">
-        <div class="container">
-            <div class="section-title">
-                <h2>Become a Volunteer</h2>
-                <p>Join our team of dedicated volunteers and help us care for animals in need</p>
-            </div>
-            
-            <div class="form-container">
-                <form id="volunteerForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" class="form-control" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="availability">Availability</label>
-                        <select id="availability" class="form-control">
-                            <option value="weekends">Weekends</option>
-                            <option value="weekdays">Weekdays</option>
-                            <option value="both">Both Weekends & Weekdays</option>
-                            <option value="flexible">Flexible</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="experience">Previous experience with animals (optional)</label>
-                        <textarea id="experience" class="form-control" placeholder="Tell us about any experience you have with animals..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <div class="nav-actions">
+    <button class="donate-btn" id="openDonateModal">Donate</button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+```
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>Paws Haven Shelter</h4>
-                    <p>We are a non-profit organization dedicated to rescuing and rehoming abandoned and neglected animals since 2010.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#pets">Adopt a Pet</a></li>
-                        <li><a href="#volunteer">Volunteer</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Contact Info</h4>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Animal Street, Pet City, PC 12345</li>
-                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
-                        <li><i class="fas fa-envelope"></i> info@pawshaven.org</li>
-                        <li><i class="fas fa-clock"></i> Open 7 days a week: 9am - 6pm</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Paws Haven Shelter. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  </div>
+</header>
 
-    <!-- Donation Modal -->
-    <div class="modal" id="donationModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeDonationModal">&times;</button>
-            <h2>Support Our Shelter</h2>
-            <p>Your donation helps us provide food, medical care, and shelter to animals in need.</p>
-            
-            <form id="donationForm" style="margin-top: 30px;">
-                <div class="form-group">
-                    <label for="donationAmount">Donation Amount ($)</label>
-                    <input type="number" id="donationAmount" class="form-control" min="1" value="25" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="donorName">Full Name</label>
-                    <input type="text" id="donorName" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="donorEmail">Email Address</label>
-                    <input type="email" id="donorEmail" class="form-control" required>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Make Donation</button>
-            </form>
-        </div>
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Give Them a Loving Home</h1>
+    <p>We rescue, protect, and rehome abandoned animals. Be the reason a life changes forever.</p>
+    <div class="hero-btns">
+      <a href="#pets" class="btn btn-primary">Adopt a Pet</a>
+      <a href="#volunteer" class="btn btn-secondary">Become a Volunteer</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PETS ================= -->
+
+<section id="pets">
+  <div class="container">
+    <div class="section-title">
+      <h2>Pets Available for Adoption</h2>
+      <p>Each pet is vaccinated, loved, and waiting for a forever family.</p>
+    </div>
+<input
+  type="text"
+  id="searchInput"
+  class="search-input"
+  placeholder="Search pets by name..."
+>
+
+
+```
+<div class="filter-bar">
+  <select id="typeFilter" class="filter-select">
+    <option value="all">All Types</option>
+    <option value="dog">Dogs</option>
+    <option value="cat">Cats</option>
+    <option value="other">Other</option>
+  </select>
+
+  <select id="ageFilter" class="filter-select">
+    <option value="all">All Ages</option>
+    <option value="puppy">Puppy / Kitten</option>
+    <option value="young">Young</option>
+    <option value="adult">Adult</option>
+    <option value="senior">Senior</option>
+  </select>
+
+  <select id="genderFilter" class="filter-select">
+    <option value="all">Any Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+</div>
+
+<div class="pets-grid" id="petsContainer">
+```
+
+  <!-- Pet Card 1 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1517849845537-4d257902454a" alt="Dog">
+    <div class="pet-info">
+      <h3>Buddy</h3>
+      <span class="pet-type">Dog</span>
+      <div class="pet-details"><span>Age: 2 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 2 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1595433562696-19b23c8e0c8f" alt="Cat">
+    <div class="pet-info">
+      <h3>Luna</h3>
+      <span class="pet-type">Cat</span>
+      <div class="pet-details"><span>Age: 1 Year</span><span>Female</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 3 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1558788353-f76d92427f16" alt="Dog">
+    <div class="pet-info">
+      <h3>Max</h3>
+      <span class="pet-type">Dog</span>
+      <div class="pet-details"><span>Age: 3 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 4 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" alt="Cat">
+    <div class="pet-info">
+      <h3>Milo</h3>
+      <span class="pet-type">Cat</span>
+      <div class="pet-details"><span>Age: 4 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 5 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1546182990-dffeafbe841d" alt="Rabbit">
+    <div class="pet-info">
+      <h3>Snowy</h3>
+      <span class="pet-type">Rabbit</span>
+      <div class="pet-details"><span>Age: 1 Year</span><span>Female</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 6 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1601758064130-09f7e88a1c7c" alt="Dog">
+    <div class="pet-info">
+      <h3>Rocky</h3>
+      <span class="pet-type">Dog</span>
+      <div class="pet-details"><span>Age: 5 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 7 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2" alt="Cat">
+    <div class="pet-info">
+      <h3>Bella</h3>
+      <span class="pet-type">Cat</span>
+      <div class="pet-details"><span>Age: 2 Years</span><span>Female</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 8 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1507149833265-60c372daea22" alt="Bird">
+    <div class="pet-info">
+      <h3>Kiwi</h3>
+      <span class="pet-type">Bird</span>
+      <div class="pet-details"><span>Age: 1 Year</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 9 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e" alt="Dog">
+    <div class="pet-info">
+      <h3>Charlie</h3>
+      <span class="pet-type">Dog</span>
+      <div class="pet-details"><span>Age: 6 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 10 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb" alt="Cat">
+    <div class="pet-info">
+      <h3>Nala</h3>
+      <span class="pet-type">Cat</span>
+      <div class="pet-details"><span>Age: 3 Years</span><span>Female</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+</div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Impact</h2>
+      <p>Every number represents a life saved</p>
     </div>
 
-    <!-- Adoption Modal -->
-    <div class="modal" id="adoptionModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeAdoptionModal">&times;</button>
-            <div id="adoptionModalContent">
-                <!-- Content will be dynamically inserted here -->
-            </div>
-        </div>
+```
+<div class="stats-grid">
+  <div class="stat-item"><h3>1500+</h3><p>Animals Rescued</p></div>
+  <div class="stat-item"><h3>1200+</h3><p>Adoptions</p></div>
+  <div class="stat-item"><h3>300+</h3><p>Volunteers</p></div>
+  <div class="stat-item"><h3>24/7</h3><p>Medical Care</p></div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ================= VOLUNTEER ================= -->
+
+<section id="volunteer">
+  <div class="container">
+    <div class="section-title">
+      <h2>Volunteer With Us</h2>
+      <p>Your time can save lives</p>
     </div>
 
-    <!-- Success Message -->
-    <div id="successMessage" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: var(--success); color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 3000;">
-        <i class="fas fa-check-circle"></i> <span id="successText">Form submitted successfully!</span>
+```
+<div class="form-container">
+  <form id="volunteerForm">
+    <div class="form-row">
+      <div class="form-group"><label>First Name</label><input class="form-control" required></div>
+      <div class="form-group"><label>Last Name</label><input class="form-control" required></div>
+    </div>
+    <div class="form-group"><label>Email</label><input type="email" class="form-control" required></div>
+    <div class="form-group"><label>Phone</label><input class="form-control"></div>
+    <div class="form-group"><label>Why do you want to volunteer?</label><textarea class="form-control"></textarea></div>
+    <button class="btn btn-primary" style="width:100%">Submit Application</button>
+  </form>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>About Paws Haven</h2>
+      <p>More than a shelter — a second chance</p>
+    </div>
+    <p style="max-width:900px;margin:auto;text-align:center;">
+      Founded in 2010, Paws Haven Shelter is a non-profit organization dedicated to rescuing abused,
+      abandoned, and homeless animals. We believe compassion saves lives.
+    </p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <h4>Paws Haven</h4>
+        <p>Saving lives, one paw at a time.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#pets">Adopt</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i> +91 90000 00000</p>
+        <p><i class="fas fa-envelope"></i> info@pawshaven.org</p>
+      </div>
     </div>
 
-    <script>
-        // Pet data
-        const pets = [
-            {
-                id: 1,
-                name: "Buddy",
-                type: "dog",
-                breed: "Golden Retriever",
-                age: "puppy",
-                gender: "male",
-                description: "A friendly and energetic puppy who loves to play fetch.",
-                img: "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                id: 2,
-                name: "Luna",
-                type: "dog",
-                breed: "Domestic Shorthair",
-                age: "young",
-                gender: "female",
-                description: "A sweet and affectionate dog who enjoys cuddling.",
-                img: "C:\\Users\\HP\\Downloads\\Unconditional love and pure joy! This cute pets….jpg"
-            },
-            {
-                id: 3,
-                name: "Max",
-                type: "dog",
-                breed: "German Shepherd",
-                age: "adult",
-                gender: "male",
-                description: "A loyal and intelligent dog, great for active families.",
-                img: "https://images.unsplash.com/photo-1568572933382-74d440642117?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                id: 4,
-                name: "Bella",
-                type: "dog",
-                breed: "Beagle",
-                age: "young",
-                gender: "female",
-                description: "Curious and friendly, Bella loves exploring new scents.",
-                img: "https://images.unsplash.com/photo-1534351450181-ea9f78427fe8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                id: 5,
-                name: "Simba",
-                type: "cat",
-                breed: "Maine Coon",
-                age: "adult",
-                gender: "male",
-                description: "A majestic cat with a gentle personality.",
-                img: "https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                id: 6,
-                name: "Rocky",
-                type: "other",
-                breed: "Rabbit",
-                age: "young",
-                gender: "male",
-                description: "A cute and fluffy rabbit who is litter-trained.",
-                img: "https://images.unsplash.com/photo-1556838803-cc94986cb631?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                id: 7,
-                name: "Daisy",
-                type: "dog",
-                breed: "Dachshund",
-                age: "senior",
-                gender: "female",
-                description: "A calm and loving senior dog looking for a quiet home.",
-                img: "https://images.unsplash.com/photo-1560807707-8cc77767d783?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            },
-            {
-                id: 8,
-                name: "Oliver",
-                type: "cat",
-                breed: "Siamese",
-                age: "adult",
-                gender: "male",
-                description: "Playful and vocal, Oliver will keep you entertained.",
-                img: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-            }
-        ];
+```
+<div class="copyright">© 2025 Paws Haven Shelter</div>
+```
 
-        // DOM Elements
-        const petsContainer = document.getElementById('petsContainer');
-        const typeFilter = document.getElementById('typeFilter');
-        const ageFilter = document.getElementById('ageFilter');
-        const genderFilter = document.getElementById('genderFilter');
-        const donationModal = document.getElementById('donationModal');
-        const adoptionModal = document.getElementById('adoptionModal');
-        const openDonateModalBtn = document.getElementById('openDonateModal');
-        const closeDonationModalBtn = document.getElementById('closeDonationModal');
-        const closeAdoptionModalBtn = document.getElementById('closeAdoptionModal');
-        const volunteerForm = document.getElementById('volunteerForm');
-        const donationForm = document.getElementById('donationForm');
-        const successMessage = document.getElementById('successMessage');
-        const successText = document.getElementById('successText');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.querySelector('.nav-links');
+  </div>
+</footer>
 
-        // Initialize pets display
-        function renderPets() {
-            const type = typeFilter.value;
-            const age = ageFilter.value;
-            const gender = genderFilter.value;
-            
-            // Filter pets
-            const filteredPets = pets.filter(pet => {
-                return (type === 'all' || pet.type === type) &&
-                       (age === 'all' || pet.age === age) &&
-                       (gender === 'all' || pet.gender === gender);
-            });
-            
-            // Clear container
-            petsContainer.innerHTML = '';
-            
-            // Render pets
-            filteredPets.forEach(pet => {
-                const petCard = document.createElement('div');
-                petCard.className = 'pet-card';
-                
-                // Get age label
-                let ageLabel = '';
-                switch(pet.age) {
-                    case 'puppy': ageLabel = 'Puppy/Kitten'; break;
-                    case 'young': ageLabel = 'Young (1-3 years)'; break;
-                    case 'adult': ageLabel = 'Adult (4-7 years)'; break;
-                    case 'senior': ageLabel = 'Senior (8+ years)'; break;
-                }
-                
-                petCard.innerHTML = `
-                    <img src="${pet.img}" alt="${pet.name}" class="pet-img">
-                    <div class="pet-info">
-                        <h3>${pet.name}</h3>
-                        <span class="pet-type">${pet.type === 'dog' ? 'Dog' : pet.type === 'cat' ? 'Cat' : 'Other'}</span>
-                        <div class="pet-details">
-                            <span><i class="fas fa-paw"></i> ${pet.breed}</span>
-                            <span><i class="fas fa-birthday-cake"></i> ${ageLabel}</span>
-                            <span><i class="fas ${pet.gender === 'male' ? 'fa-mars' : 'fa-venus'}"></i> ${pet.gender === 'male' ? 'Male' : 'Female'}</span>
-                        </div>
-                        <p>${pet.description}</p>
-                        <button class="adopt-btn" data-id="${pet.id}">Adopt ${pet.name}</button>
-                    </div>
-                `;
-                
-                petsContainer.appendChild(petCard);
-            });
-            
-            // Add event listeners to adopt buttons
-            document.querySelectorAll('.adopt-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const petId = parseInt(this.getAttribute('data-id'));
-                    const pet = pets.find(p => p.id === petId);
-                    openAdoptionModal(pet);
-                });
-            });
-        }
+<!-- ================= MODALS ================= -->
 
-        // Open adoption modal
-        function openAdoptionModal(pet) {
-            const modalContent = document.getElementById('adoptionModalContent');
-            
-            modalContent.innerHTML = `
-                <h2>Adopt ${pet.name}</h2>
-                <div style="display: flex; gap: 20px; margin: 20px 0;">
-                    <img src="${pet.img}" alt="${pet.name}" style="width: 150px; height: 150px; object-fit: cover; border-radius: 10px;">
-                    <div>
-                        <p><strong>Breed:</strong> ${pet.breed}</p>
-                        <p><strong>Age:</strong> ${pet.age === 'puppy' ? 'Puppy/Kitten' : pet.age === 'young' ? 'Young (1-3 years)' : pet.age === 'adult' ? 'Adult (4-7 years)' : 'Senior (8+ years)'}</p>
-                        <p><strong>Gender:</strong> ${pet.gender === 'male' ? 'Male' : 'Female'}</p>
-                        <p>${pet.description}</p>
-                    </div>
-                </div>
-                
-                <h3 style="margin-top: 30px;">Adoption Inquiry Form</h3>
-                <form id="adoptionForm" style="margin-top: 20px;">
-                    <div class="form-group">
-                        <label for="adopterName">Full Name</label>
-                        <input type="text" id="adopterName" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="adopterEmail">Email Address</label>
-                        <input type="email" id="adopterEmail" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="adopterPhone">Phone Number</label>
-                        <input type="tel" id="adopterPhone" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="homeType">Type of Home</label>
-                        <select id="homeType" class="form-control" required>
-                            <option value="">Select...</option>
-                            <option value="house">House</option>
-                            <option value="apartment">Apartment</option>
-                            <option value="condo">Condo/Townhouse</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="previousPets">Previous pet experience</label>
-                        <textarea id="previousPets" class="form-control" placeholder="Tell us about your previous experience with pets..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Adoption Inquiry</button>
-                </form>
-            `;
-            
-            // Add event listener to the new form
-            const adoptionForm = document.getElementById('adoptionForm');
-            adoptionForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                showSuccess(`Thank you! We've received your inquiry about ${pet.name}. We'll contact you within 48 hours.`);
-                adoptionModal.style.display = 'none';
-            });
-            
-            adoptionModal.style.display = 'flex';
-        }
+<div class="modal" id="donationModal">
+  <div class="modal-content">
+    <button class="close-modal" id="closeDonationModal">×</button>
+    <h2>Support Our Mission</h2>
+    <form id="donationForm">
+      <input type="number" class="form-control" placeholder="Amount" required>
+      <input class="form-control" placeholder="Full Name" required>
+      <input type="email" class="form-control" placeholder="Email" required>
+      <button class="btn btn-primary" style="width:100%">Donate</button>
+    </form>
+  </div>
+</div>
 
-        // Show success message
-        function showSuccess(message) {
-            successText.textContent = message;
-            successMessage.style.display = 'block';
-            
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-        }
+<!-- Success Toast -->
 
-        // Event Listeners
-        typeFilter.addEventListener('change', renderPets);
-        ageFilter.addEventListener('change', renderPets);
-        genderFilter.addEventListener('change', renderPets);
+<div id="successMessage"></div>
 
-        openDonateModalBtn.addEventListener('click', () => {
-            donationModal.style.display = 'flex';
-        });
+<!-- Main JS -->
 
-        closeDonationModalBtn.addEventListener('click', () => {
-            donationModal.style.display = 'none';
-        });
+<script src="index.js" defer></script>
 
-        closeAdoptionModalBtn.addEventListener('click', () => {
-            adoptionModal.style.display = 'none';
-        });
-
-        // Close modals when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === donationModal) {
-                donationModal.style.display = 'none';
-            }
-            if (e.target === adoptionModal) {
-                adoptionModal.style.display = 'none';
-            }
-        });
-
-        // Volunteer form submission
-        volunteerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            showSuccess('Thank you for your volunteer application! We will contact you soon.');
-            volunteerForm.reset();
-        });
-
-        // Donation form submission
-        donationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const amount = document.getElementById('donationAmount').value;
-            showSuccess(`Thank you for your $${amount} donation! A receipt has been sent to your email.`);
-            donationModal.style.display = 'none';
-            donationForm.reset();
-        });
-
-        // Mobile menu toggle
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.backgroundColor = 'white';
-                navLinks.style.padding = '20px';
-                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-                navLinks.style.gap = '15px';
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (window.innerWidth <= 768) {
-                        navLinks.style.display = 'none';
-                    }
-                }
-            });
-        });
-
-        // Initialize
-        renderPets();
-    </script>
 </body>
 </html>
