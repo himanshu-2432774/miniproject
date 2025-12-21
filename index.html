@@ -49,7 +49,7 @@
 <section class="hero" id="home">
   <div class="container">
     <h1>Give Them a Loving Home</h1>
-    <p>We rescue, protect, and rehome abandoned animals.</p>
+    <p>We rescue, protect, and rehome abandoned animals. Be the reason a life changes forever.</p>
     <div class="hero-btns">
       <a href="#pets" class="btn btn-primary">Adopt a Pet</a>
       <a href="#volunteer" class="btn btn-secondary">Become a Volunteer</a>
@@ -63,7 +63,7 @@
 
     <div class="section-title">
       <h2>Pets Available for Adoption</h2>
-      <p>Each pet is vaccinated and waiting for a forever family.</p>
+      <p>Each pet is vaccinated, loved, and waiting for a forever family.</p>
     </div>
 
     <!-- Search -->
@@ -128,7 +128,9 @@
       <div class="pet-card" data-type="cat" data-age="young" data-gender="female">
         <img class="pet-img" src="./luna.png" alt="Luna the cat" onerror="this.onerror=null;this.src='./luna.png'">
         <div class="pet-actions">
-          <a href="pet.html?name=Luna" class="view-btn">View Details</a>          <button class="favorite-btn" data-name="Luna" aria-pressed="false" title="Add to favorites">♡</button>        </div>
+          <a href="pet.html?name=Luna" class="view-btn">View Details</a>
+          <button class="favorite-btn" data-name="Luna" aria-pressed="false" title="Add to favorites">♡</button>
+        </div>
         <div class="pet-info">
           <h3>Luna</h3>
           <span class="pet-type">Cat</span>
@@ -166,14 +168,185 @@
         </div>
       </form>
     </div>
+
   </div>
 </section>
 
 <!-- ================= VOLUNTEER ================= -->
+... (rest of file preserved)
+    <option value="all">All Ages</option>
+    <option value="puppy">Puppy / Kitten</option>
+    <option value="young">Young</option>
+    <option value="adult">Adult</option>
+    <option value="senior">Senior</option>
+  </select>
+
+  <select id="genderFilter" class="filter-select">
+    <option value="all">Any Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+</div>
+
+<div class="pets-grid" id="petsContainer">
+```
+
+  <!-- Pet Card 1 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1517849845537-4d257902454a" alt="Dog">
+    <div class="pet-info">
+      <h3>Buddy</h3>
+      <span class="pet-type">Dog</span>
+      <div class="pet-details"><span>Age: 2 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 2 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?cs=srgb&dl=pexels-just-a-couple-photos-3777622.jpg&fm=jpg" alt="Cat">
+    <div class="pet-info">
+      <h3>Luna</h3>
+      <span class="pet-type">Cat</span>
+      <div class="pet-details"><span>Age: 1 Year</span><span>Female</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 3 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1558788353-f76d92427f16" alt="Dog">
+    <div class="pet-info">
+      <h3>Max</h3>
+      <span class="pet-type">Dog</span>
+      <div class="pet-details"><span>Age: 3 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 4 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" alt="Cat">
+    <div class="pet-info">
+      <h3>Milo</h3>
+      <span class="pet-type">Cat</span>
+      <div class="pet-details"><span>Age: 4 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 5 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1546182990-dffeafbe841d" alt="Rabbit">
+    <div class="pet-info">
+      <h3>Snowy</h3>
+      <span class="pet-type">Rabbit</span>
+      <div class="pet-details"><span>Age: 1 Year</span><span>Female</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 6 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1601758064130-09f7e88a1c7c" alt="Dog">
+    <div class="pet-info">
+      <h3>Rocky</h3>
+      <span class="pet-type">Dog</span>
+      <div class="pet-details"><span>Age: 5 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 7 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2" alt="Cat">
+    <div class="pet-info">
+      <h3>Bella</h3>
+      <span class="pet-type">Cat</span>
+      <div class="pet-details"><span>Age: 2 Years</span><span>Female</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 8 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1507149833265-60c372daea22" alt="Bird">
+    <div class="pet-info">
+      <h3>Kiwi</h3>
+      <span class="pet-type">Bird</span>
+      <div class="pet-details"><span>Age: 1 Year</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 9 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e" alt="Dog">
+    <div class="pet-info">
+      <h3>Charlie</h3>
+      <span class="pet-type">Dog</span>
+      <div class="pet-details"><span>Age: 6 Years</span><span>Male</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+  <!-- Pet Card 10 -->
+
+  <div class="pet-card">
+    <img class="pet-img" src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb" alt="Cat">
+    <div class="pet-info">
+      <h3>Nala</h3>
+      <span class="pet-type">Cat</span>
+      <div class="pet-details"><span>Age: 3 Years</span><span>Female</span></div>
+      <button class="adopt-btn">Adopt Now</button>
+    </div>
+  </div>
+
+</div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Impact</h2>
+      <p>Every number represents a life saved</p>
+    </div>
+
+```
+<div class="stats-grid">
+  <div class="stat-item"><h3>1500+</h3><p>Animals Rescued</p></div>
+  <div class="stat-item"><h3>1200+</h3><p>Adoptions</p></div>
+  <div class="stat-item"><h3>300+</h3><p>Volunteers</p></div>
+  <div class="stat-item"><h3>24/7</h3><p>Medical Care</p></div>
+</div>
+```
+
+>>>>>>> 9344a839b2b4f145f7c048fd3b6218f003c650c2
+  </div>
+</section>
+
+<!-- ================= VOLUNTEER ================= -->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9344a839b2b4f145f7c048fd3b6218f003c650c2
 <section id="volunteer">
   <div class="container">
     <div class="section-title">
       <h2>Volunteer With Us</h2>
+<<<<<<< HEAD
     </div>
 
     <form id="volunteerForm" class="form-container">
@@ -198,10 +371,46 @@
         Submit Application
       </button>
     </form>
+=======
+      <p>Your time can save lives</p>
+    </div>
+
+```
+<div class="form-container">
+  <form id="volunteerForm">
+    <div class="form-row">
+      <div class="form-group"><label>First Name</label><input class="form-control" required></div>
+      <div class="form-group"><label>Last Name</label><input class="form-control" required></div>
+    </div>
+    <div class="form-group"><label>Email</label><input type="email" class="form-control" required></div>
+    <div class="form-group"><label>Phone</label><input class="form-control"></div>
+    <div class="form-group"><label>Why do you want to volunteer?</label><textarea class="form-control"></textarea></div>
+    <button class="btn btn-primary" style="width:100%">Submit Application</button>
+  </form>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>About Paws Haven</h2>
+      <p>More than a shelter — a second chance</p>
+    </div>
+    <p style="max-width:900px;margin:auto;text-align:center;">
+      Founded in 2010, Paws Haven Shelter is a non-profit organization dedicated to rescuing abused,
+      abandoned, and homeless animals. We believe compassion saves lives.
+    </p>
+>>>>>>> 9344a839b2b4f145f7c048fd3b6218f003c650c2
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
+<<<<<<< HEAD
 <footer id="contact">
   <div class="container">
     <p>© 2025 Paws Haven Shelter</p>
@@ -214,15 +423,58 @@
     <button type="button" class="close-modal" id="closeDonationModal">×</button>
     <h2>Support Our Mission</h2>
 
+=======
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <h4>Paws Haven</h4>
+        <p>Saving lives, one paw at a time.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#pets">Adopt</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><i class="fas fa-phone"></i> +91 90000 00000</p>
+        <p><i class="fas fa-envelope"></i> info@pawshaven.org</p>
+      </div>
+    </div>
+
+```
+<div class="copyright">© 2025 Paws Haven Shelter</div>
+```
+
+  </div>
+</footer>
+
+<!-- ================= MODALS ================= -->
+
+<div class="modal" id="donationModal">
+  <div class="modal-content">
+    <button class="close-modal" id="closeDonationModal">×</button>
+    <h2>Support Our Mission</h2>
+>>>>>>> 9344a839b2b4f145f7c048fd3b6218f003c650c2
     <form id="donationForm">
       <input type="number" class="form-control" placeholder="Amount" required>
       <input class="form-control" placeholder="Full Name" required>
       <input type="email" class="form-control" placeholder="Email" required>
+<<<<<<< HEAD
       <button type="submit" class="btn btn-primary" style="width:100%">Donate</button>
+=======
+      <button class="btn btn-primary" style="width:100%">Donate</button>
+>>>>>>> 9344a839b2b4f145f7c048fd3b6218f003c650c2
     </form>
   </div>
 </div>
 
+<<<<<<< HEAD
 <!-- Favorites Modal -->
 <div class="modal" id="favoritesModal" aria-hidden="true">
   <div class="modal-content">
@@ -235,6 +487,15 @@
 
 <!-- JS -->
 <script src="js/index.js" defer></script>
+=======
+<!-- Success Toast -->
+
+<div id="successMessage"></div>
+
+<!-- Main JS -->
+
+<script src="index.js" defer></script>
+>>>>>>> 9344a839b2b4f145f7c048fd3b6218f003c650c2
 
 </body>
 </html>
