@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paws Haven Shelter | Find Your Furry Friend</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container">
+    <nav class="navbar">
+      <a href="#home" class="logo">
+        <i class="fas fa-paw"></i> Paws Haven
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#pets">Adopt</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" class="donate-btn" id="openDonateModal">Donate</button>
+        <button id="favoritesBtn" class="favorites-btn" aria-label="View favorites">
+          <i class="fas fa-heart"></i>
+          <span id="favoritesCount" class="favorites-count" style="display:none">0</span>
+        </button>
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Give Them a Loving Home</h1>
+    <p>We rescue, protect, and rehome abandoned animals.</p>
+    <div class="hero-btns">
+      <a href="#pets" class="btn btn-primary">Adopt a Pet</a>
+      <a href="#volunteer" class="btn btn-secondary">Become a Volunteer</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PETS ================= -->
+<section id="pets">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Pets Available for Adoption</h2>
+      <p>Each pet is vaccinated and waiting for a forever family.</p>
+    </div>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <label for="searchInput" class="sr-only">Search pets</label>
+      <div class="search-field">
+        <!-- Magnifier SVG -->
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.57-4.23C15 5.01 12.99 3 10.5 3S6 5.01 6 7.5 8.01 12 10.5 12c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L18 20.49 20.49 18l-4.99-4zM10.5 10C9.12 10 8 8.88 8 7.5S9.12 5 10.5 5 13 6.12 13 7.5 11.88 10 10.5 10z"></path>
+        </svg>
+
+        <input type="search" id="searchInput" class="search-input" placeholder="Search pets by name..." aria-label="Search pets by name" />
+
+        <button type="button" id="clearSearch" class="clear-search" aria-label="Clear search" title="Clear search">×</button>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-bar">
+      <select id="typeFilter" class="filter-select">
+        <option value="all">All Types</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="rabbit">Rabbit</option>
+        <option value="bird">Bird</option>
+      </select>
+
+      <select id="ageFilter" class="filter-select">
+        <option value="all">All Ages</option>
+        <option value="young">Young</option>
+        <option value="adult">Adult</option>
+        <option value="senior">Senior</option>
+      </select>
+
+      <select id="genderFilter" class="filter-select">
+        <option value="all">Any Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <!-- Pets Grid -->
+    <div class="pets-grid" id="petsContainer">
+
+      <!-- Pet Card -->
+      <div class="pet-card" data-type="dog" data-age="young" data-gender="male">
+        <img class="pet-img" src="https://images.unsplash.com/photo-1517849845537-4d257902454a" alt="Buddy the dog">
+        <div class="pet-actions">
+          <a href="pet.html?name=Buddy" class="view-btn">View Details</a>
+          <button class="favorite-btn" data-name="Buddy" aria-pressed="false" title="Add to favorites">♡</button>
+        </div>
+        <div class="pet-info">
+          <h3>Buddy</h3>
+          <span class="pet-type">Dog</span>
+          <div class="pet-details">
+            <span>Age: 2 Years</span>
+            <span>Male</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pet-card" data-type="cat" data-age="young" data-gender="female">
+        <img class="pet-img" src="./luna.png" alt="Luna the cat" onerror="this.onerror=null;this.src='./luna.png'">
+        <div class="pet-actions">
+          <a href="pet.html?name=Luna" class="view-btn">View Details</a>          <button class="favorite-btn" data-name="Luna" aria-pressed="false" title="Add to favorites">♡</button>        </div>
+        <div class="pet-info">
+          <h3>Luna</h3>
+          <span class="pet-type">Cat</span>
+          <div class="pet-details">
+            <span>Age: 1 Year</span>
+            <span>Female</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Add Pet Form (Admin) -->
+    <div class="add-pet" style="margin-top:2rem; padding:1rem; border:1px dashed var(--muted); border-radius:8px; max-width:560px;">
+      <h3>Add a Pet (Admin)</h3>
+      <p style="margin:0 0 .5rem 0; font-size:.95rem; color:var(--muted)">Set an API key in <code>ADMIN_API_KEY</code> on the server and provide the same key here to authenticate.</p>
+
+      <div style="display:flex;gap:.5rem;align-items:center; margin-bottom:.5rem;">
+        <input id="adminKeyInput" placeholder="Admin API Key (optional)" style="flex:1;min-width:140px;" />
+        <button id="saveAdminKey" class="btn btn-outline" type="button">Save key</button>
+        <button id="clearAdminKey" class="btn btn-outline" type="button">Clear</button>
+      </div>
+
+      <form id="createPetForm">
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+          <input id="petNameInput" name="name" placeholder="Name" required style="flex:1;min-width:140px;" />
+          <input id="petTypeInput" name="type" placeholder="Type (dog/cat)" required style="min-width:120px;" />
+          <input id="petAgeInput" name="years" placeholder="Years (e.g. 2 Years)" style="min-width:120px;" />
+          <input id="petGenderInput" name="gender" placeholder="Gender" style="min-width:120px;" />
+        </div>
+        <input id="petImgInput" name="img" placeholder="Image URL (optional)" style="width:100%;margin-top:.5rem;" />
+        <div id="createPetMessage" style="margin-top:.5rem; min-height:1.2rem;"></div>
+        <div style="margin-top:.5rem;text-align:right;">
+          <button type="submit" class="btn btn-primary">Add Pet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VOLUNTEER ================= -->
+<section id="volunteer">
+  <div class="container">
+    <div class="section-title">
+      <h2>Volunteer With Us</h2>
+    </div>
+
+    <form id="volunteerForm" class="form-container">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input id="firstName" name="firstName" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" name="lastName" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%">
+        Submit Application
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact">
+  <div class="container">
+    <p>© 2025 Paws Haven Shelter</p>
+  </div>
+</footer>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="donationModal" aria-hidden="true">
+  <div class="modal-content">
+    <button type="button" class="close-modal" id="closeDonationModal">×</button>
+    <h2>Support Our Mission</h2>
+
+    <form id="donationForm">
+      <input type="number" class="form-control" placeholder="Amount" required>
+      <input class="form-control" placeholder="Full Name" required>
+      <input type="email" class="form-control" placeholder="Email" required>
+      <button type="submit" class="btn btn-primary" style="width:100%">Donate</button>
+    </form>
+  </div>
+</div>
+
+<!-- Favorites Modal -->
+<div class="modal" id="favoritesModal" aria-hidden="true">
+  <div class="modal-content">
+    <button type="button" class="close-modal" id="closeFavoritesModal">×</button>
+    <h2>Your Favorites</h2>
+    <div id="favoritesList" class="favorites-list"></div>
+    <p id="favoritesEmpty" class="muted">No favorites yet — add pets you love!</p>
+  </div>
+</div>
+
+<!-- JS -->
+<script src="js/index.js" defer></script>
+
+</body>
+</html>
