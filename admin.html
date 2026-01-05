@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Paws Haven</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Admin CSS -->
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <i class="fas fa-paw"></i> Paws Haven
+      </a>
+      <div class="header-actions">
+        <span class="admin-badge"><i class="fas fa-shield-alt"></i> Admin Panel</span>
+        <a href="index.html" class="btn btn-outline">← Back to Main</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="container admin-container">
+
+  <!-- Admin Auth Section -->
+  <div id="adminAuthSection" class="auth-section">
+    <div class="auth-card">
+      <div class="auth-icon">
+        <i class="fas fa-lock"></i>
+      </div>
+      <h2>Admin Authentication</h2>
+      <p>Enter your admin key to access the control panel</p>
+      
+      <form id="authForm">
+        <div class="form-group">
+          <label for="adminKey">Admin Key</label>
+          <input 
+            type="password" 
+            id="adminKey" 
+            class="form-control" 
+            placeholder="Enter your admin key"
+            required
+          >
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+      </form>
+
+      <p class="auth-hint">
+        <i class="fas fa-info-circle"></i>
+        Contact your administrator for the admin key
+      </p>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard (Hidden initially) -->
+  <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+
+    <!-- Header -->
+    <div class="dashboard-header">
+      <div>
+        <h1><i class="fas fa-cogs"></i> Admin Dashboard</h1>
+        <p>Manage pets in your shelter</p>
+      </div>
+      <button id="logoutBtn" class="btn btn-outline">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+
+    <!-- Add Pet Form -->
+    <section class="form-section">
+      <h2><i class="fas fa-plus-circle"></i> Add New Pet</h2>
+      
+      <form id="addPetForm" class="pet-form">
+        <!-- Row 1 -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="petName">Pet Name *</label>
+            <input 
+              type="text" 
+              id="petName" 
+              class="form-control" 
+              placeholder="e.g., Luna" 
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="petType">Type *</label>
+            <select id="petType" class="form-control" required>
+              <option value="">Select Type</option>
+              <option value="dog">🐕 Dog</option>
+              <option value="cat">🐈 Cat</option>
+              <option value="rabbit">🐰 Rabbit</option>
+              <option value="bird">🐦 Bird</option>
+              <option value="other">🐾 Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="petYears">Age (Years)</label>
+            <input 
+              type="number" 
+              id="petYears" 
+              class="form-control" 
+              placeholder="e.g., 2"
+              min="0"
+              step="0.5"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="petGender">Gender</label>
+            <select id="petGender" class="form-control">
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="form-group">
+          <label for="petImg">Image URL</label>
+          <input 
+            type="url" 
+            id="petImg" 
+            class="form-control" 
+            placeholder="https://example.com/image.jpg"
+          >
+        </div>
+
+        <!-- Row 4 -->
+        <div class="form-group">
+          <label for="petDesc">Description</label>
+          <textarea 
+            id="petDesc" 
+            class="form-control" 
+            placeholder="Tell us about this pet..."
+            rows="4"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-large">
+            <i class="fas fa-plus"></i> Add Pet to Shelter
+          </button>
+          <button type="reset" class="btn btn-outline">
+            <i class="fas fa-redo"></i> Clear Form
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Pets List -->
+    <section class="pets-list-section">
+      <h2><i class="fas fa-list"></i> Pets in Shelter</h2>
+      
+      <div class="pets-list-controls">
+        <input 
+          type="search" 
+          id="searchPets" 
+          class="form-control search-input" 
+          placeholder="Search pets..."
+        >
+      </div>
+
+      <div id="petsList" class="pets-list">
+        <p class="loading"><i class="fas fa-spinner fa-spin"></i> Loading pets...</p>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <p>© 2025 Paws Haven Shelter - Admin Panel</p>
+  </div>
+</footer>
+
+<!-- Toast Notification -->
+<div id="toastMessage"></div>
+
+<!-- Admin JS -->
+<script src="js/admin.js" defer></script>
+
+</body>
+</html>
