@@ -2,18 +2,93 @@
   "pets": [
     {
       "id": 1,
-      "name": "Fido",
-      "type": "dog"
+      "name": "Poodle Mix",
+      "type": "dog",
+      "years": "3",
+      "gender": "Female",
+      "img": "./images/20 Dogs Mixed With Poodles - The Paws.jpg",
+      "description": "A beautiful poodle mix with a friendly and energetic personality. Great with families and loves playtime!"
     },
     {
       "id": 2,
-      "name": "Whiskers",
-      "type": "cat"
+      "name": "Bulldog",
+      "type": "dog",
+      "years": "4",
+      "gender": "Male",
+      "img": "./images/bull inglês.jpg",
+      "description": "A strong and loyal bulldog who loves cuddles and enjoys leisurely walks. Perfect lap dog for someone special!"
     },
     {
       "id": 3,
-      "name": "TestPet",
-      "type": "dog"
+      "name": "Shih Tzu",
+      "type": "dog",
+      "years": "2",
+      "gender": "Female",
+      "img": "./images/Cachorro Shih Tzu.jpg",
+      "description": "An adorable Shih Tzu with a fluffy coat and sweet temperament. Loves being groomed and pampered!"
+    },
+    {
+      "id": 4,
+      "name": "Golden",
+      "type": "dog",
+      "years": "2",
+      "gender": "Male",
+      "img": "./images/cute Golden retriever.jpg",
+      "description": "A beautiful and friendly golden retriever looking for a loving home. Very playful and great with families!"
+    },
+    {
+      "id": 5,
+      "name": "Buddy",
+      "type": "dog",
+      "years": "5",
+      "gender": "Male",
+      "img": "./images/download (3).jpg",
+      "description": "A loyal and obedient dog who is well-trained and friendly. Great family companion with a gentle nature!"
+    },
+    {
+      "id": 6,
+      "name": "Luna",
+      "type": "dog",
+      "years": "3",
+      "gender": "Female",
+      "img": "./images/download (4).jpg",
+      "description": "A beautiful and energetic dog who loves outdoor activities. Perfect for active families who enjoy adventures!"
+    },
+    {
+      "id": 7,
+      "name": "Max",
+      "type": "dog",
+      "years": "6",
+      "gender": "Male",
+      "img": "./images/Full-grown Cocker Spaniel & Beagle Mix_.jpg",
+      "description": "A wonderful cocker spaniel and beagle mix with boundless energy and love. Great for experienced dog owners!"
+    },
+    {
+      "id": 8,
+      "name": "Frost",
+      "type": "dog",
+      "years": "4",
+      "gender": "Male",
+      "img": "./images/Husky, wow he is stunning.jpg",
+      "description": "A stunning and majestic husky with a wonderful temperament. Loves snow and outdoor adventures!"
+    },
+    {
+      "id": 9,
+      "name": "German Shepherd",
+      "type": "dog",
+      "years": "3",
+      "gender": "Male",
+      "img": "./images/I love dogs! espesially German Shepards i have one….jpg",
+      "description": "A noble and intelligent German Shepherd who is protective and loyal. Great working dog or family pet!"
+    },
+    {
+      "id": 10,
+      "name": "Chihuahua",
+      "type": "dog",
+      "years": "2",
+      "gender": "Female",
+      "img": "./images/🐶 É𝕝𝕖𝕧𝕒𝕘𝕖 𝕕𝕖 ℂ𝕙𝕚𝕙𝕦𝕒𝕙𝕦𝕒𝕤 𝕃𝕆𝔽….jpg",
+      "description": "A tiny and adorable chihuahua with a big personality. Perfect for apartment living and loves being a companion!"
     }
   ]
 }
