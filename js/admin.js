@@ -56,6 +56,29 @@ async function addPet(payload) {
   }
 }
 
+async function deletePet(id) {
+  try {
+    const headers = {};
+    if (adminKeyStored) headers['x-api-key'] = adminKeyStored;
+
+    const res = await fetch(`/api/pets/${id}`, {
+      method: 'DELETE',
+      headers
+    });
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || 'Failed to delete pet');
+    }
+
+    await loadPets();
+    return true;
+  } catch (err) {
+    console.error('Error deleting pet:', err);
+    throw err;
+  }
+}
+
 // ============= AUTHENTICATION =============
 function authenticate(key) {
   // Store the key for API requests
@@ -130,9 +153,18 @@ function renderPets(pets) {
   document.querySelectorAll('.delete-btn').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       const petId = e.currentTarget.dataset.id;
-      if (confirm('Are you sure you want to delete this pet?')) {
-        // Note: Delete endpoint not implemented in server yet
-        showToast('Delete functionality coming soon', 'error');
+      const petName = e.currentTarget.closest('.pet-item').querySelector('.pet-item-name').textContent;
+      if (confirm(`Are you sure you want to delete ${petName}?`)) {
+        try {
+          e.currentTarget.disabled = true;
+          e.currentTarget.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Deleting...';
+          await deletePet(petId);
+          showToast(`${petName} deleted successfully`, 'success');
+        } catch (err) {
+          showToast(`Error: ${err.message}`, 'error');
+          e.currentTarget.disabled = false;
+          e.currentTarget.innerHTML = '<i class="fas fa-trash"></i> Delete';
+        }
       }
     });
   });
