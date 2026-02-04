@@ -14,6 +14,13 @@
   const favoriteBtn = document.getElementById('favoriteBtn');
   const headerFavoritesCount = document.getElementById('favoritesCount');
 
+  // Adoption form elements
+  const adoptBtn = document.getElementById('adoptBtn');
+  const adoptionModal = document.getElementById('adoptionModal');
+  const adoptionForm = document.getElementById('adoptionForm');
+  const closeModalBtn = document.querySelector('.close');
+  const cancelBtn = document.getElementById('cancelBtn');
+
   const params = new URLSearchParams(window.location.search);
   const petNameParam = params.get('name');
   const petIdParam = params.get('id');
@@ -38,6 +45,92 @@
       headerFavoritesCount.textContent = cnt;
       headerFavoritesCount.style.display = cnt ? 'inline-block' : 'none';
     }
+  }
+
+  // Adoption form functions
+  function openAdoptionModal() {
+    adoptionModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAdoptionModal() {
+    adoptionModal.classList.remove('open');
+    document.body.style.overflow = 'auto';
+    adoptionForm.reset();
+  }
+
+  function handleAdoptionSubmit(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(adoptionForm);
+    const data = Object.fromEntries(formData);
+    
+    // Get pet name from the page
+    const petName = petNameEl.textContent;
+    
+    // Add pet name to the data
+    const applicationData = {
+      ...data,
+      petName: petName
+    };
+
+    // Show loading state
+    const submitBtn = adoptionForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    // Send to API
+    fetch('/api/adoptions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(applicationData)
+    })
+    .then(res => res.json())
+    .then(result => {
+      if (result.success) {
+        alert('Adoption application submitted successfully! We will review your application and contact you soon.');
+        closeAdoptionModal();
+      } else {
+        alert('Error: ' + (result.error || 'Failed to submit application'));
+      }
+    })
+    .catch(err => {
+      console.error('Error submitting adoption application:', err);
+      alert('Error submitting application. Please try again.');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
+  }
+
+  // Event listeners for adoption modal
+  if (adoptBtn) {
+    adoptBtn.addEventListener('click', openAdoptionModal);
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeAdoptionModal);
+  }
+
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', closeAdoptionModal);
+  }
+
+  if (adoptionForm) {
+    adoptionForm.addEventListener('submit', handleAdoptionSubmit);
+  }
+
+  // Close modal when clicking outside of it
+  if (adoptionModal) {
+    adoptionModal.addEventListener('click', (e) => {
+      if (e.target === adoptionModal) {
+        closeAdoptionModal();
+      }
+    });
   }
 
   try {
@@ -76,4 +169,3 @@
     if (petDetailsSection) petDetailsSection.innerHTML = '<p style="text-align:center;">Error loading pet details. Try again later.</p>';
   }
 })();
-
