@@ -7,7 +7,8 @@
       "years": "3",
       "gender": "Female",
       "img": "./images/20 Dogs Mixed With Poodles - The Paws.jpg",
-      "description": "A beautiful poodle mix with a friendly and energetic personality. Great with families and loves playtime!"
+      "description": "A beautiful poodle mix with a friendly and energetic personality. Great with families and loves playtime!",
+      "price": 250
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "years": "4",
       "gender": "Male",
       "img": "./images/bull inglês.jpg",
-      "description": "A strong and loyal bulldog who loves cuddles and enjoys leisurely walks. Perfect lap dog for someone special!"
+      "description": "A strong and loyal bulldog who loves cuddles and enjoys leisurely walks. Perfect lap dog for someone special!",
+      "price": 300
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "years": "2",
       "gender": "Female",
       "img": "./images/Cachorro Shih Tzu.jpg",
-      "description": "An adorable Shih Tzu with a fluffy coat and sweet temperament. Loves being groomed and pampered!"
+      "description": "An adorable Shih Tzu with a fluffy coat and sweet temperament. Loves being groomed and pampered!",
+      "price": 280
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "years": "2",
       "gender": "Male",
       "img": "./images/cute Golden retriever.jpg",
-      "description": "A beautiful and friendly golden retriever looking for a loving home. Very playful and great with families!"
+      "description": "A beautiful and friendly golden retriever looking for a loving home. Very playful and great with families!",
+      "price": 320
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "years": "5",
       "gender": "Male",
       "img": "./images/download (3).jpg",
-      "description": "A loyal and obedient dog who is well-trained and friendly. Great family companion with a gentle nature!"
+      "description": "A loyal and obedient dog who is well-trained and friendly. Great family companion with a gentle nature!",
+      "price": 200
     },
     {
       "id": 6,
@@ -52,7 +57,8 @@
       "years": "3",
       "gender": "Female",
       "img": "./images/download (4).jpg",
-      "description": "A beautiful and energetic dog who loves outdoor activities. Perfect for active families who enjoy adventures!"
+      "description": "A beautiful and energetic dog who loves outdoor activities. Perfect for active families who enjoy adventures!",
+      "price": 270
     },
     {
       "id": 7,
@@ -61,7 +67,8 @@
       "years": "6",
       "gender": "Male",
       "img": "./images/Full-grown Cocker Spaniel & Beagle Mix_.jpg",
-      "description": "A wonderful cocker spaniel and beagle mix with boundless energy and love. Great for experienced dog owners!"
+      "description": "A wonderful cocker spaniel and beagle mix with boundless energy and love. Great for experienced dog owners!",
+      "price": 210
     },
     {
       "id": 8,
@@ -70,7 +77,8 @@
       "years": "4",
       "gender": "Male",
       "img": "./images/Husky, wow he is stunning.jpg",
-      "description": "A stunning and majestic husky with a wonderful temperament. Loves snow and outdoor adventures!"
+      "description": "A stunning and majestic husky with a wonderful temperament. Loves snow and outdoor adventures!",
+      "price": 350
     },
     {
       "id": 9,
@@ -79,16 +87,18 @@
       "years": "3",
       "gender": "Male",
       "img": "./images/I love dogs! espesially German Shepards i have one….jpg",
-      "description": "A noble and intelligent German Shepherd who is protective and loyal. Great working dog or family pet!"
+      "description": "A noble and intelligent German Shepherd who is protective and loyal. Great working dog or family pet!",
+      "price": 380
     },
     {
      "id":10,
-      "name": "luna" ,
+      "name": "luna",
       "type":"cat",
       "years":"1",
       "gender":"Female",
       "img":"./images/funy cat.jpg",
-      "description":"A playful and affectionate cat who loves to cuddle and explore. Perfect for families or individuals looking for a loving companion!"
+      "description":"A playful and affectionate cat who loves to cuddle and explore. Perfect for families or individuals looking for a loving companion!",
+      "price": 150
     },
     {
       "id":11,
@@ -97,7 +107,8 @@
       "years":"2",
       "gender":"male",
       "img":"./images/Cat.jpg",
-      "description":"it is a friendly cat that loves to play and street rescue"
+      "description":"it is a friendly cat that loves to play and street rescue",
+      "price": 140
     },
     {
       "id":"12",
@@ -106,7 +117,8 @@
       "years":"8months",
        "gender":"male",
        "img":"./images/parrot.jpg.jpg",
-       "description":"a colorful parrot that can mimic sounds and loves social interaction"
+       "description":"a colorful parrot that can mimic sounds and loves social interaction",
+       "price": 180
     },
     {
       "id":"13",
@@ -115,7 +127,8 @@
       "years":"2",
        "gender":"Female",
        "img":"./images/ducks.jpg.jpg",
-       "description":"A friendly and curious duck that loves swimming and playing in water."
+       "description":"A friendly and curious duck that loves swimming and playing in water.",
+       "price": 120
     },
     {
       "id":"14",
@@ -124,7 +137,8 @@
       "years":"10 months",
        "gender":"male",
        "img":"./images/hamster.jpg",
-       "description":"A cute and playful hamster that loves to run on its wheel and explore its habitat."
+       "description":"A cute and playful hamster that loves to run on its wheel and explore its habitat.",
+       "price": 50
     },
     {
       "id":"15",
@@ -133,25 +147,19 @@
       "years":"6 months",
        "gender":"male",
        "img":"./images/goldfish.jpg",
-       "description":"A cute and curious goldfish that loves swimming in its tank."
+       "description":"A cute and curious goldfish that loves swimming in its tank.",
+       "price": 30
     },
     {
       "id":"16",
       "name":"lovebird",
       "type":"kiwi bird",
-      "years":"1.2",
+       "years":"1.2",
        "gender":"male",
        "img":"./images/kiwi.jpg",
-       "description":"A small and energetic kiwi bird that is known for its unique appearance and playful behavior."
-    },
-    {
-      "id": 17,
-      "name": "Chihuahua",
-      "type": "dog",
-      "years": "2",
-      "gender": "Female",
-      "img": "./images/🐶 É𝕝𝕖𝕧𝕒𝕘𝕖 𝕕𝕖 ℂ𝕙𝕚𝕙𝕦𝕒𝕙𝕦𝕒𝕤 𝕃𝕆𝔽….jpg",
-      "description": "A tiny and adorable chihuahua with a big personality. Perfect for apartment living and loves being a companion!"
+       "description":"A small and energetic kiwi bird that is known for its unique appearance and playful behavior.",
+       "price": 160
     }
+    
   ]
 }
