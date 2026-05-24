@@ -81,11 +81,30 @@ header {
 }
 
 /* ================= PET IMAGE ================= */
+.pet-image-section {
+  position: relative;
+  width: 100%;
+}
+
 .pet-image {
   width: 100%;
   border-radius: 14px;
   object-fit: cover;
   max-height: 420px;
+}
+
+.pet-price-detail {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 107, 107, 0.95);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* ================= PET INFO ================= */
