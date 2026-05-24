@@ -159,7 +159,10 @@ function renderPets(list) {
     const isFav = isFavorite(pet.name);
 
     card.innerHTML = `
-      <img class="pet-img" src="${pet.img || './luna.png'}" alt="${pet.name}">
+      <div class="pet-image-wrapper">
+        <img class="pet-img" src="${pet.img || './luna.png'}" alt="${pet.name}">
+        <div class="pet-price">$${pet.price || '0'}</div>
+      </div>
       <div class="pet-overlay">
         <a href="pet.html?id=${pet.id}" class="view-btn">View Details</a>
         <button class="favorite-btn ${isFav ? 'active' : ''}" data-name="${pet.name}" title="Add to favorites">
