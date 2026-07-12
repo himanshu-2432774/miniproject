@@ -155,6 +155,12 @@
     petAgeEl.textContent = pet.years || pet.age || '';
     petGenderEl.textContent = pet.gender || '';
     petDescriptionEl.textContent = pet.description || `Meet ${pet.name} — a lovely ${pet.type || 'pet'}!`;
+    
+    // Display price
+    const petPriceEl = document.getElementById('petPrice');
+    if (petPriceEl && pet.price) {
+      petPriceEl.textContent = `$${pet.price}`;
+    }
 
     updateFavoriteUI(pet.name);
     if (favoriteBtn) {
