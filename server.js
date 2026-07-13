@@ -95,6 +95,8 @@ async function deletePet(id) {
 app.get('/api/pets', async (req, res) => {
   try {
     let pets;
+    const localDb = readDb();
+    const localPets = localDb.pets || [];
     
     // Try to fetch from Supabase first if connected
     if (supabase) {
@@ -106,20 +108,27 @@ app.get('/api/pets', async (req, res) => {
         
         if (error) {
           console.warn('Supabase fetch failed, falling back to local db:', error.message);
-          pets = await getAllPets();
+          pets = localPets;
         } else if (data && data.length > 0) {
           console.log('✓ Fetched pets from Supabase');
-          pets = data;
+          // Merge prices from local db into Supabase data
+          pets = data.map(pet => {
+            const localPet = localPets.find(lp => lp.id === pet.id);
+            return {
+              ...pet,
+              price: pet.price || (localPet && localPet.price) || 0
+            };
+          });
         } else {
           console.log('No pets in Supabase, using local db');
-          pets = await getAllPets();
+          pets = localPets;
         }
       } catch (err) {
         console.warn('Supabase error, falling back to local db:', err.message);
-        pets = await getAllPets();
+        pets = localPets;
       }
     } else {
-      pets = await getAllPets();
+      pets = localPets;
     }
     
     res.json(pets);

@@ -1,4 +1,4 @@
-# Paws Haven — Local Backend (Node + Express)
+#  —  pet shelter (Node + Express)
 
 A small local backend to power the static Paws Haven frontend. It provides a simple REST API for pets and local persistence with SQLite for development and demos.
 

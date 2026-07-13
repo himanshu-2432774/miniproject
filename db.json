@@ -91,75 +91,84 @@
       "price": 380
     },
     {
-     "id":10,
+      "id": 10,
       "name": "luna",
-      "type":"cat",
-      "years":"1",
-      "gender":"Female",
-      "img":"./images/funy cat.jpg",
-      "description":"A playful and affectionate cat who loves to cuddle and explore. Perfect for families or individuals looking for a loving companion!",
+      "type": "cat",
+      "years": "1",
+      "gender": "Female",
+      "img": "./images/funy cat.jpg",
+      "description": "A playful and affectionate cat who loves to cuddle and explore. Perfect for families or individuals looking for a loving companion!",
       "price": 150
     },
     {
-      "id":11,
-      "name":"milo",
-      "type":"cat",
-      "years":"2",
-      "gender":"male",
-      "img":"./images/Cat.jpg",
-      "description":"it is a friendly cat that loves to play and street rescue",
+      "id": 11,
+      "name": "milo",
+      "type": "cat",
+      "years": "2",
+      "gender": "male",
+      "img": "./images/Cat.jpg",
+      "description": "it is a friendly cat that loves to play and street rescue",
       "price": 140
     },
     {
-      "id":"12",
-      "name":"coco",
-      "type":"bird",
-      "years":"8months",
-       "gender":"male",
-       "img":"./images/parrot.jpg.jpg",
-       "description":"a colorful parrot that can mimic sounds and loves social interaction",
-       "price": 180
+      "id": "12",
+      "name": "coco",
+      "type": "bird",
+      "years": "8months",
+      "gender": "male",
+      "img": "./images/parrot.jpg.jpg",
+      "description": "a colorful parrot that can mimic sounds and loves social interaction",
+      "price": 180
     },
     {
-      "id":"13",
-      "name":"Moti",
-      "type":"Duck",
-      "years":"2",
-       "gender":"Female",
-       "img":"./images/ducks.jpg.jpg",
-       "description":"A friendly and curious duck that loves swimming and playing in water.",
-       "price": 120
+      "id": "13",
+      "name": "Moti",
+      "type": "Duck",
+      "years": "2",
+      "gender": "Female",
+      "img": "./images/ducks.jpg.jpg",
+      "description": "A friendly and curious duck that loves swimming and playing in water.",
+      "price": 120
     },
     {
-      "id":"14",
-      "name":"snowy",
-      "type":"hamster",
-      "years":"10 months",
-       "gender":"male",
-       "img":"./images/hamster.jpg",
-       "description":"A cute and playful hamster that loves to run on its wheel and explore its habitat.",
-       "price": 50
+      "id": "14",
+      "name": "snowy",
+      "type": "hamster",
+      "years": "10 months",
+      "gender": "male",
+      "img": "./images/hamster.jpg",
+      "description": "A cute and playful hamster that loves to run on its wheel and explore its habitat.",
+      "price": 50
     },
     {
-      "id":"15",
-      "name":"Nemo",
-      "type":"fish",
-      "years":"6 months",
-       "gender":"male",
-       "img":"./images/goldfish.jpg",
-       "description":"A cute and curious goldfish that loves swimming in its tank.",
-       "price": 30
+      "id": "15",
+      "name": "Nemo",
+      "type": "fish",
+      "years": "6 months",
+      "gender": "male",
+      "img": "./images/goldfish.jpg",
+      "description": "A cute and curious goldfish that loves swimming in its tank.",
+      "price": 30
     },
     {
-      "id":"16",
-      "name":"lovebird",
-      "type":"kiwi bird",
-       "years":"1.2",
-       "gender":"male",
-       "img":"./images/kiwi.jpg",
-       "description":"A small and energetic kiwi bird that is known for its unique appearance and playful behavior.",
-       "price": 160
+      "id": "16",
+      "name": "lovebird",
+      "type": "kiwi bird",
+      "years": "1.2",
+      "gender": "male",
+      "img": "./images/kiwi.jpg",
+      "description": "A small and energetic kiwi bird that is known for its unique appearance and playful behavior.",
+      "price": 160
+    },
+    {
+      "id": 17,
+      "name": "JestPet",
+      "type": "dog",
+      "years": "1 Year",
+      "gender": "",
+      "img": "",
+      "description": "",
+      "created_at": "2026-07-13T10:32:35.877Z"
     }
-    
   ]
 }

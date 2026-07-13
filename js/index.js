@@ -11,10 +11,13 @@ const genderFilter = document.getElementById("genderFilter");
 
 // Modal elements
 const donationModal = document.getElementById("donationModal");
+const donationForm = document.getElementById("donationForm");
+const qrModal = document.getElementById("qrModal");
 const favoritesModal = document.getElementById("favoritesModal");
 
 const openDonateModalBtn = document.getElementById("openDonateModal");
 const closeDonationModalBtn = document.getElementById("closeDonationModal");
+const closeQrModalBtn = document.getElementById("closeQrModal");
 const closeFavoritesModalBtn = document.getElementById("closeFavoritesModal");
 
 const favoritesBtn = document.getElementById("favoritesBtn");
@@ -271,6 +274,23 @@ function setupEventListeners() {
   closeDonationModalBtn.addEventListener('click', () => closeModal(donationModal));
   favoritesBtn.addEventListener('click', () => openModal(favoritesModal));
   closeFavoritesModalBtn.addEventListener('click', () => closeModal(favoritesModal));
+  closeQrModalBtn.addEventListener('click', () => closeModal(qrModal));
+
+  donationForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const amount = donationForm.querySelector('[name="amount"]').value.trim();
+    const fullName = donationForm.querySelector('[name="fullName"]').value.trim();
+    const email = donationForm.querySelector('[name="email"]').value.trim();
+
+    if (!amount || !fullName || !email) {
+      showError('Please fill in all donation details.');
+      return;
+    }
+
+    closeModal(donationModal);
+    openModal(qrModal);
+  });
 
   // Filters
   searchInput.addEventListener('input', applyFilters);
