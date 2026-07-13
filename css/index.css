@@ -699,6 +699,26 @@ footer {
   position: relative;
 }
 
+.qr-modal-content {
+  text-align: center;
+}
+
+.qr-description {
+  margin: 14px 0 24px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.qr-image {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.12);
+}
+
 .close-modal {
   position: absolute;
   top: 15px;
