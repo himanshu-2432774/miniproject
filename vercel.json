@@ -10,8 +10,8 @@
   ,
   "routes": [
     { "src": "^/$", "dest": "/index.html" },
-    { "src": "^/about$", "dest": "/about.html" },
-    { "src": "^/volunteer$", "dest": "/volunteer.html" },
+    { "src": "^/about$", "dest": "/api/pages/about" },
+    { "src": "^/volunteer$", "dest": "/api/pages/volunteer" },
     { "handle": "filesystem" },
     { "src": "^/(.*)$", "dest": "/$1" }
   ]
