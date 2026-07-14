@@ -11,7 +11,9 @@
   "routes": [
     { "src": "^/$", "dest": "/index.html" },
     { "src": "^/about$", "dest": "/api/pages/about" },
+    { "src": "^/about.html$", "dest": "/api/pages/about" },
     { "src": "^/volunteer$", "dest": "/api/pages/volunteer" },
+    { "src": "^/volunteer.html$", "dest": "/api/pages/volunteer" },
     { "handle": "filesystem" },
     { "src": "^/(.*)$", "dest": "/$1" }
   ]
